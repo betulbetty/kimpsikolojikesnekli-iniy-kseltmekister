@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psikolojik Esneklik Yarışması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="notification-container">
+        <div id="notification-box" class="notification"></div>
+    </div>
+    <div class="main-container">
+        <div class="header">
+            <div class="game-title">Psikolojik Esneklik Yarışması</div>
+        </div>
+        <div class="content-area">
+            <div class="money-tree-container">
+                <div class="money-levels">
+                    <div data-level="12" data-amount="1000000">12. ₺1.000.000</div>
+                    <div data-level="11" data-amount="250000">11. ₺250.000</div>
+                    <div data-level="10" data-amount="125000">10. ₺125.000</div>
+                    <div data-level="9" data-amount="60000">9. ₺60.000</div>
+                    <div data-level="8" data-amount="30000" class="active">8. ₺30.000</div>
+                    <div data-level="7" data-amount="15000" class="guaranteed">7. ₺15.000</div>
+                    <div data-level="6" data-amount="7500">6. ₺7.500</div>
+                    <div data-level="5" data-amount="5000">5. ₺5.000</div>
+                    <div data-level="4" data-amount="3000">4. ₺3.000</div>
+                    <div data-level="3" data-amount="2000">3. ₺2.000</div>
+                    <div data-level="2" data-amount="1000">2. ₺1.000</div>
+                    <div data-level="1" data-amount="500" class="guaranteed">1. ₺500</div>
+                </div>
+            </div>
+            <div class="game-platform">
+                <div id="question-container">Soru burada görüntülenecek...</div>
+                <div id="answer-buttons" class="grid-container">
+                    <button class="answer-btn" data-correct="false">A: </button>
+                    <button class="answer-btn" data-correct="false">B: </button>
+                    <button class="answer-btn" data-correct="false">C: </button>
+                    <button class="answer-btn" data-correct="false">D: </button>
+                </div>
+                <div class="bottom-bar">
+                    <div id="jokers">
+                        <button id="fifty-fifty">50/50</button>
+                        <button id="audience-poll">Seyirci</button>
+                        <button id="phone-a-friend">Telefon</button>
+                        <button id="feedback-joker">Dönüt Al</button>
+                    </div>
+                    <div id="score">Kazanılan: ₺0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
