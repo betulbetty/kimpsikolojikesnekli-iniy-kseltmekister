@@ -1,0 +1,241 @@
+body {
+    font-family: sans-serif;
+    background-color: #a8dadc; /* Açık Turkuaz - Ana Arka Plan */
+    color: #457b9d; /* Koyu Turkuaz - Ana Metin Rengi */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Yatayda ortala */
+    justify-content: center; /* Dikeyde ortala */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.notification-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.notification {
+    background-color: rgba(168, 218, 220, 0.9); /* Açık Turkuaz Yarı Saydam */
+    color: #023047; /* Çok Koyu Turkuaz */
+    padding: 15px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid #c77dff; /* Lila Kenarlık */
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+.notification.correct-feedback {
+    background-color: #457b9d; /* Koyu Turkuaz */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.notification.joker-feedback {
+    background-color: #c77dff; /* Lila */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.main-container {
+    background-color: #bde0fe; /* Açık Mavi - Ana Katman */
+    border: 2px solid #c77dff; /* Lila */
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-title {
+    font-size: 3em;
+    font-weight: bold;
+    color: #c77dff; /* Lila */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: sparkle 2s infinite alternate; /* Parıltı animasyonu */
+}
+
+@keyframes sparkle {
+    0% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+    100% { text-shadow: 2px 2px 10px rgba(199, 125, 255, 0.8); } /* Daha belirgin parıltı */
+}
+
+.content-area {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Öğeleri dikey olarak esnet */
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+.money-tree-container {
+    background-color: #e0fbfc; /* Açık Yeşilimsi Mavi - Para Ağacı Katmanı */
+    border: 1px solid #c77dff; /* Lila */
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse; /* Para seviyelerini yukarıdan aşağıya sıralar */
+    align-items: center;
+    overflow: visible; /* Para ağacının tamamının görünmesi için */
+    order: 1;
+    width: 150px; /* Sabit genişlik */
+    margin-right: 20px;
+    align-self: stretch; /* Dikey olarak esne */
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.money-levels {
+    display: flex;
+    flex-direction: column-reverse; /* Para seviyelerini yukarıdan aşağıya sıralar */
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.money-levels div {
+    padding: 8px 12px;
+    font-size: 1em;
+    color: #457b9d; /* Koyu Turkuaz */
+    white-space: nowrap;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.money-levels div.active {
+    background-color: #c77dff; /* Lila */
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 15px #c77dff;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.money-levels div.correct-answer {
+    background-color: #4caf50; /* Açık Yeşil - Doğru Cevap Arka Planı */
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 20px #4caf50;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.game-platform {
+    background-color: #f8f9fa; /* Açık Gri - Oyun Platformu Katmanı */
+    border: 2px solid #c77dff; /* Lila */
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Kalan alanı kullan */
+    align-self: stretch; /* Dikey olarak esne */
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+#question-container {
+    background-color: #fff; /* Beyaz - Soru Alanı */
+    color: #023047; /* Çok Koyu Turkuaz */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    text-align: center;
+    border: 1px solid #c77dff; /* Lila */
+    width: 90%;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* İki sütun yapalım */
+    gap: 10px;
+    width: 90%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.answer-btn {
+    padding: 10px 15px;
+    border: 1px solid #c77dff; /* Lila */
+    border-radius: 5px;
+    background-color: #8ecae6; /* Orta Turkuaz */
+    color: #023047; /* Çok Koyu Turkuaz */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    text-align: left;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.answer-btn:hover {
+    background-color: #bde0fe; /* Açık Mavi */
+}
+
+.answer-btn.correct {
+    background-color: #4caf50; /* Açık Yeşil - Doğru Cevap Butonu */
+    border-color: #4caf50;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.answer-btn.wrong {
+    background-color: #e63946; /* Kırmızı - Yanlış Cevap Butonu */
+    border-color: #e63946;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+#jokers button {
+    padding: 8px 12px;
+    border: 1px solid #c77dff; /* Lila */
+    border-radius: 5px;
+    background-color: #fdf0d5; /* Açık Sarımsı - Joker Butonları */
+    color: #023047; /* Çok Koyu Turkuaz */
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 0.9em;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+#jokers button:hover {
+    background-color: #ffe8d6; /* Daha Açık Sarımsı */
+}
+
+#score {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #c77dff; /* Lila */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
